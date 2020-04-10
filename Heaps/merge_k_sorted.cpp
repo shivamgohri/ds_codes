@@ -11,10 +11,6 @@ vector<int> merge(vector<vector<int> > &arr){
 	vector<int> output;
 	priority_queue<customPair, vector<customPair> , greater<customPair> > pq;
 	for(int i=0; i<arr.size(); i++){
-		// customPair temp;
-		// temp.first = arr[i][0];
-		// temp.second.first = i;
-		// temp.second.second = 0;
 		pq.push( make_pair( arr[i][0], make_pair(i,0) ) );
 	}
 	while(pq.empty()!=true){
@@ -24,10 +20,6 @@ vector<int> merge(vector<vector<int> > &arr){
 		int y = val.second.second;
 		output.push_back(val.first);
 		if(y+1<arr[x].size()){
-			// customPair temp;
-			// temp.first = arr[x][y+1];
-			// temp.second.first = x;
-			// temp.second.second = y+1;
 			pq.push( make_pair( arr[x][y+1], make_pair(x,y+1) ) );
 		}
 	}
