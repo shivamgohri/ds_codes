@@ -5,13 +5,13 @@ using namespace std;
 // O(NLOGN)
 
 
-int merge( int arr[], int temp[], int left, int mid, int right ){
+long long merge( int arr[], int temp[], int left, int mid, int right ){
 
 	int i = left;
 	int j = mid;
 	int k = left;
 
-	int inv = 0;
+	long long inv = 0;
 	while ((i <= mid - 1) && (j <= right)) { 
         if (arr[i] <= arr[j]) { 
             temp[k++] = arr[i++]; 
@@ -34,9 +34,10 @@ int merge( int arr[], int temp[], int left, int mid, int right ){
     return inv;
 }
 
-int _merge( int arr[], int temp[], int left, int right ){
+long long _merge( int arr[], int temp[], int left, int right ){
 
-	int mid, inv = 0;
+	int mid;
+	long long inv = 0;
 	if(right>left){
 
 		mid = (left+right)/2;
@@ -48,7 +49,7 @@ int _merge( int arr[], int temp[], int left, int right ){
 	return inv;
 }
 
-int findInversions( int arr[], int n ){
+long long findInversions( int arr[], int n ){
 	
 	int temp[n];
 	return _merge( arr, temp, 0 , n-1 );
@@ -65,7 +66,7 @@ int main(){
 	for(int i=0; i<n; i++)
 		cin>> arr[i];
 
-	int result = findInversions( arr, n );
+	long long result = findInversions( arr, n );
 	cout<< result <<endl;
 
 	return 0;
