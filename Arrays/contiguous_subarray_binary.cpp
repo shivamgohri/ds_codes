@@ -1,4 +1,4 @@
-#include <iostream>
+`#include <iostream>
 #include <algorithm>
 
 using namespace std;
@@ -17,7 +17,7 @@ int main(){
 	int arr_new[ (2*n)+1 ] = {};
 	int count = 0, max_length=0;
 
-	std::fill_n(arr_new, (2*n)+1, -6);
+	std::fill_n(arr_new, (2*n)+1, -n);
 
 	arr_new[n] = -1;
 
