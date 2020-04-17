@@ -14,12 +14,22 @@ int main(){
 
 	while(k--){
 
-		int start, end, money;
+		int start, end, money;       //start and end are indexes
 		cin>> start >>end >>money;
 
-		if(start!=0){
-			arr[start]
-		}
+		arr[start] += money;
+		arr[end+1] += -money;
+	}
+
+	for(int i=1; i<n; i++){
+
+		arr[i] = arr[i-1]+arr[i];
 
 	}
+
+	for(int i=0; i<n; i++){
+		cout<< arr[i] <<" ";
+	}
+
+	return 0;
 }
