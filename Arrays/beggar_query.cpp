@@ -17,8 +17,10 @@ int main(){
 		int start, end, money;       //start and end are indexes
 		cin>> start >>end >>money;
 
-		arr[start] += money;
-		arr[end+1] += -money;
+		arr[start-1] += money;
+
+		if(end<n)
+			arr[end] += -money;
 	}
 
 	for(int i=1; i<n; i++){
