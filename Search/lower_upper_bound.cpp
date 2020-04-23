@@ -25,7 +25,7 @@ int main(){
 	// cout<< (lb-arr) <<endl;
 
 	int* ub = upper_bound(arr, arr+n, key);
-	// cout<< (ub-arr) <<endl;
+	cout<< (ub-arr) <<endl;
 
 	cout<< (ub-lb) <<endl;
 
