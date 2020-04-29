@@ -1,16 +1,23 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
-#define ll unsigned long long
+
+#define ll long long
 
 int main(){
 
+	ll t;
+	cin>>t;
+
 	ll n = 1000000ll;
 
-	ll* arr = new ll[n+1](); //0 - prime, 1 - not prime
+	vector<ll> arr(n+1,0); //0-prime, 1 - not prime
 
 	arr[0] = arr[1] = 1;
+
 	for(ll i=3; i<=n; i++){
+
 		if(i&1){
 			if(arr[i]==0){
 				for(ll j=i*i; j<=n; j=j+i){
@@ -23,27 +30,20 @@ int main(){
 		}
 	}
 
-	ll* csum = new ll[n+1]();
+	vector<ll> sum;
 
-	ll ans = 0ll;
-
-	//consider a=0 corner case;
-
-	for(ll i=0; i<=n; i++){
-		csum[i] = ans;
+	for(ll i=0; i<n; i++){
 		if(arr[i]==0){
-			ans++;
-		}		
+			sum.push_back(i);
+		}
 	}
 
-	ll t;
-	cin>>t;
 	while(t--){
-		ll a,b;
-		cin>>a>>b;
 
+		ll x;
+		cin>>x;
 
-		cout<< (csum[b]-csum[a]) <<endl;
+		cout<<sum[x-1]<<endl;
 	}
 
 	return 0;
