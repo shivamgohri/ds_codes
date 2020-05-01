@@ -13,7 +13,7 @@ int main(){
 	cin>> divident >>divisor;
 
 	if(divisor==1){
-		return dividentl
+		return divident;
 	}
 
 	int sign = 1;
