@@ -59,16 +59,17 @@ int main(){
 	vector<vector<int> > result;
 	vector<int> subset;
 
-	//allCombinations(arr, subset, result, 0);
+	allCombinations(arr, subset, result, 0);
 	//allCombinationsLexico(arr, subset, result, 0);
-	powerSet(arr, subset, result, 0);
+	//powerSet(arr, subset, result, 0);
 
 	cout<<result.size()<<":"<<endl;
 	for(int i=0; i<result.size(); i++){
+		cout<<'[';
 		for(int j=0; j<result[i].size(); j++){
-			cout<< result[i][j]<<" ";
+			cout<< result[i][j] <<", ";
 		}
-		cout<<endl;
+		cout<<"],"<<endl;
 	}
 
 	return 0;
