@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void numbers(int output, int last, int position, int size){
+void numbers(int output, int last, int position, int size, int D){
 
 	if(last>9) {return;}
 
@@ -16,7 +16,7 @@ void numbers(int output, int last, int position, int size){
 	}
 
 	for(int i=last+1; i<=(10-size+position); i++){
-		numbers( (output*10)+i, i, position+1, size );
+		numbers( (output*10)+i, i, position+1, size);
 	}
 
 	return;
@@ -31,6 +31,9 @@ int main(){
 
 		int n;
 		cin>>n;
+
+		int D;
+		cin>>D;
 
 		int output = 0;
 
