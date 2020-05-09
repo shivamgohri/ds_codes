@@ -69,6 +69,8 @@ int main(){
 
 			combinations(arr, subset, result, 0, sum, 0);
 
+			sort(result.begin(), result.end());
+
 			for(int i=0; i<result.size(); i++){
 				cout<<'(';
 				for(int j=0; j<result[i].size(); j++){
