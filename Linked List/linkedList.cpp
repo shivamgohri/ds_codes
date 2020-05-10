@@ -219,6 +219,72 @@ node* kLast(node*head, int k){
 	return slow;
 }
 
+node* merge(node* head1, node* head2){
+
+	if(head1==NULL){
+		return head2;
+	}
+	else if(head2==NULL){
+		return head1;
+	}
+
+	node* c;
+
+	//compare
+	if( head1->data<head2->data ){
+		c = head1;
+		c->next = merge(head1->next, head2);
+	}
+	else{
+		c = head2;
+		c->next = merge(head1, head2->next);
+	}
+
+	return c;
+}
+
+node* mergeSort(node* head){
+
+	if(head==NULL || head->next==NULL){
+		return head;
+	}
+
+	node* slow = head;
+	node* fast = head->next;
+
+	while(fast!=NULL && fast->next!=NULL){
+		fast = fast->next->next;
+		slow = slow->next;
+	}
+
+	node* a = slow;
+	slow = slow->next;
+
+	a->next = NULL;
+
+	node* first = mergeSort(head);
+	node* second = mergeSort(slow);
+
+	return merge(first, second);
+}
+
+bool detectCycle(node* head){
+
+	node* slow = head;
+	node* fast = head;
+
+	while( fast!=NULL && fast->next!=NULL ){
+		fast = fast->next->next;
+		slow = slow->next;
+
+		if(fast==slow){
+			return true;
+		}
+	}
+
+	return false;
+}
+
 
 int main(){
 
@@ -248,10 +314,11 @@ int main(){
 	// print(head);
 
 	node* head1 = NULL;
+	node* head2 = NULL;
 
-	cin>> head1;
-	cout<<head1<<endl;
-	cout<< kLast(head1, 3) << endl;
+	cin>> head1 ;
+
+	cout<< mergeSort(head1);
 
 
 
