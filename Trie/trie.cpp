@@ -70,7 +70,7 @@ int main(){
 
 	Trie t;
 
-	char word[] = {"shivam"};
+	char word[] = {"sarv"};
 
 	t.insert(word);
 
