@@ -55,7 +55,9 @@ int main(){
 
 			if( curr[j]=='0' ){
 
-				if(temp->children.count('1'))
+				if(temp->children.count('1')){
+					
+				}
 
 			}
 
