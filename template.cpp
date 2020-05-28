@@ -5,8 +5,6 @@ using namespace std;
 #define ull unsigned long long int
 #define ll long long
 #define pb push_back
-#define mp make_pair
-#define MAX(int)1e7+5
 
 
 void testcases(){
