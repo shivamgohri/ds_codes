@@ -21,7 +21,7 @@ void testcases(){
 	for(ull i=0; i<n; i++)
 		cin>> arr[i];
 
-	stack<ull> s;
+	
 
 	ull best = 0, i;
 
