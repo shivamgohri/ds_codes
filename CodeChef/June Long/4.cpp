@@ -9,13 +9,6 @@ typedef long long ll;
 #define MAX (int)1e7+5
 
 
-ull solve(ull n){
-
-	
-
-}
-
-
 void testcases(){
 
 	ull n;
@@ -33,8 +26,16 @@ void testcases(){
 		}
 		else{
 
-			cout<< solve(n);
-			return;
+			while(n>0){
+		        if(n&1==1){
+		            break;
+		        }
+		        n = n>>1;
+		    }
+
+		    n = n>>1;
+		    cout<< n;
+		    return;
 		}
 
 	}
@@ -50,7 +51,7 @@ int main(){
 	cin.tie(NULL);    cout.tie(NULL);
 
 	int t = 1;
-	// cin>> t;
+	cin>> t;
 
 	while(t--){
 		testcases();
