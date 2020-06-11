@@ -11,8 +11,52 @@ typedef long long ll;
 
 void testcases(){
 
+	string str;
+	cin>> str;
 
+	stack<string> s;
 
+	for(int i=0; i<str.length(); i++){
+
+		while(str[i]=='/'){
+			i++;
+		}
+
+		string name = "";
+
+		while( i<str.length() && str[i]!='/' ){
+			name += str[i];
+			i++;
+		}
+
+		if( name==".." ){
+			if(!s.empty()){
+				s.pop();
+			}
+		}
+		else if(name=="."){
+			continue;
+		}
+		else{
+			s.push(name);
+		}
+	}
+
+	string result = "";
+
+	while(!s.empty()){
+		if(result.empty()){
+			result = s.top();
+		}
+		else{
+			result = s.top() + "/" + result;
+		}
+		s.pop();
+	}
+	result = "/" + result;
+
+	cout<< result;
+	return;
 }
 
 
