@@ -25,7 +25,7 @@ void testcases(){
 	int i = 0, x = 0, ans = 0;
 	auto it = dp.begin();
 
-	while(dp.size()!=0){
+	while(!dp.empty()){
 
 		if(it==dp.end()){
 			it = dp.begin();
@@ -33,16 +33,16 @@ void testcases(){
 		}
 
 		if(it->second==0){
-			dp.erase(it);
+			auto temp = it;
 			it++;
+			dp.erase(temp);
 			continue;
 		}
 
+		cout<< it->first <<" ";
+
 		if( it->first%k==0 ){
 			it->second--;
-			if(it->second==0){
-				dp.erase(it);
-			}
 			it++;
 		}
 		else{
@@ -50,8 +50,8 @@ void testcases(){
 			if( (it->first+x)%k==0 ){
 				ans++;
 				x++;
-				it++;
 				it->second--;
+				it++;
 			}
 			else{
 				x++;

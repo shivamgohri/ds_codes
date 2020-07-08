@@ -7,6 +7,7 @@ typedef long long ll;
 #define pb push_back
 #define mp make_pair
 #define MAX(int)1e7+5
+#define mod 100000007
 
 
 void testcases(){
@@ -21,7 +22,7 @@ int main(){
 	ios_base::sync_with_stdio(false); cin.tie(NULL);
 
 	int t = 1;
-	// cin>> t;
+	cin>> t;
 
 	while(t--){
 		testcases();
