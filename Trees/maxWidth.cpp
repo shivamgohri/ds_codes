@@ -8,7 +8,7 @@ typedef long long ll;
 #define mp make_pair
 #define MAX(int)1e7+5
 
-void solve(TreeNode* root, ull depth, ull position, int* ans, unordered_map<ull, ull>& left){
+void solve(TreeNode* root, ull depth, ull position, ull* ans, unordered_map<ull, ull>& left){
 	if(root==NULL){
 		return;
 	}
@@ -25,12 +25,12 @@ void solve(TreeNode* root, ull depth, ull position, int* ans, unordered_map<ull,
 
 int widthOfBinaryTree(TreeNode* root) {
 
-	int ans = 0;
+	ull ans = 0;
 	unordered_map<ull, ull> left;
 
 	solve(root, 0, 0, &ans, left);
 
-	return ans;        
+	return (int)ans;        
 }
 
 
