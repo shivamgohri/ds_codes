@@ -7,27 +7,12 @@ typedef long long ll;
 #define pb push_back
 #define mp make_pair
 #define MAX(int)1e7+5
+#define mod 100000007
 
 
 void testcases(){
 
-	int n;
-	cin>> n;
 
-	double angle = 360.00/n;
-
-    int a = 90 / angle;
-
-    double prod = a*angle;
-
-    if( prod == 90 ){
-        cout<< "YES";
-    }
-    else{
-        cout<< "NO";
-    }
-    
-	return;
 
 }
 
